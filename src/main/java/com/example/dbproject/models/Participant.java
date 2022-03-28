@@ -1,5 +1,6 @@
 package com.example.dbproject.models;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Participant {
@@ -7,7 +8,7 @@ public class Participant {
     private String  nom;
     private String  prenom;
     private Integer id_profile;
-    private Date date_naissance;
+    private LocalDate date_naissance;
 
     public Integer getMatricule_participant() {
         return matricule_participant;
@@ -41,15 +42,15 @@ public class Participant {
         this.id_profile = id_profile;
     }
 
-    public Date getDate_naissance() {
+    public LocalDate getDate_naissance() {
         return date_naissance;
     }
 
-    public void setDate_naissance(Date date_naissance) {
+    public void setDate_naissance(LocalDate date_naissance) {
         this.date_naissance = date_naissance;
     }
 
-    public Participant(Integer matricule_participant, String nom, String prenom, Integer id_profile, Date date_naissance) {
+    public Participant(Integer matricule_participant, String nom, String prenom, Integer id_profile, LocalDate date_naissance) {
         this.matricule_participant = matricule_participant;
         this.nom = nom;
         this.prenom = prenom;

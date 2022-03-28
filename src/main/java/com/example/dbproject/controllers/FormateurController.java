@@ -2,6 +2,8 @@ package com.example.dbproject.controllers;
 
 import com.example.dbproject.DatabaseConnection;
 import com.example.dbproject.models.Formateur;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -29,14 +31,13 @@ public class FormateurController   implements Initializable  {
 
     DatabaseConnection connect= new DatabaseConnection();
     Connection connectDB = connect.getConnection();
-
-    private Integer SelectedDomain;
+    Integer SelectedDomain;
     @FXML
     private Button addTrainer;
     @FXML
     private Button cancel;
     @FXML
-    private ComboBox<String> domaines = new ComboBox<String>();
+    private ComboBox domaines ;
     @FXML
     private ImageView home;
     @FXML
@@ -64,6 +65,8 @@ public class FormateurController   implements Initializable  {
         home.setImage(homeImage);
 
         this.getDomains();
+
+
     }
 
 
@@ -74,10 +77,9 @@ public class FormateurController   implements Initializable  {
 
 
     public void PostTrainer(){
-
        Formateur trainer=new Formateur( this.trainerName.getText(), this.lastnameTrainer.getText(),this.mailTrainer.getText(),parseInt(this.telTrainer.getText()),this.SelectedDomain);
-       String query="INSERT INTO formateur (nom,prenom,email,tel,code_domaine) VALUES ('";
-       String queryValues="'"+trainer.getNom()+"',"+trainer.getPrenom()+"',"+trainer.getEmail()+"',"+trainer.getTel()+"',"+trainer.getCode_domaine()+"')";
+       String query="INSERT INTO formateur (nom,prenom,email,tel,code_domaine) VALUES (";
+       String queryValues="'"+trainer.getNom()+"','"+trainer.getPrenom()+"','"+trainer.getEmail()+"',"+trainer.getTel()+","+trainer.getCode_domaine()+")";
         try{
             Statement stmt=connectDB.createStatement();
             stmt.executeUpdate(query+queryValues);
@@ -143,7 +145,10 @@ public class FormateurController   implements Initializable  {
 
             while (domaines.next()){
                 this.domaines.getItems().add(domaines.getString(2));
+
             }
+            stmt.close();
+            domaines.close();
 
         }catch(Exception e ){
             e.printStackTrace();
@@ -155,13 +160,29 @@ public class FormateurController   implements Initializable  {
         this.lastnameTrainer.setText("");
         this.telTrainer.setText("");
         this.mailTrainer.setText("");
-        this.domaines=new ComboBox<String>();
+        this.domaines=new ComboBox<>();
     }
+    public void getDomaineID(String domain){
+        System.out.println("code domaine: "+domain);
+        String query= "SELECT code_domaine FROM `domaine` WHERE libelle='"+domain+"'";
+        try{
+            Statement stmt=connectDB.createStatement();
+            ResultSet queryResult= stmt.executeQuery(query);
 
+         while (queryResult.next()){
+                  System.out.println("queryResult.getInt(1) : "+queryResult.getInt(1));
+                  this.SelectedDomain=queryResult.getInt(1);
+            }
+
+        }catch(Exception e ){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
     @FXML
     void event(ActionEvent event) {
-       // this.SelectedDomain= domaines.getSelectionModel().getSelectedItem();
-        System.out.println(domaines.getSelectionModel().getSelectedItem());
+        String s = domaines.getSelectionModel().getSelectedItem().toString();
+        this.getDomaineID(s);
     }
 
     @FXML

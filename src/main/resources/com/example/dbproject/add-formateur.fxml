@@ -52,7 +52,7 @@
                 <Font size="13.0" />
             </font>
         </Button>
-        <Label fx:id="registrationerrormsg" layoutX="34.0" layoutY="93.0" prefHeight="22.0" prefWidth="467.0" />
+        <Label fx:id="registrationerrormsg" layoutX="34.0" layoutY="93.0" prefHeight="22.0" prefWidth="467.0" textFill="#36bf41" />
         <Label fx:id="pwdmatchmsg" layoutX="27.0" layoutY="283.0" prefHeight="15.0" prefWidth="467.0" />
         <Label layoutX="14.0" layoutY="244.0" prefHeight="22.0" prefWidth="133.0" text="Domain">
             <font>
@@ -70,7 +70,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="telTrainer" layoutX="139.0" layoutY="279.0" prefHeight="26.0" prefWidth="336.0" promptText="Enter your phone number" />
+      <TextField fx:id="telTrainer" layoutX="147.0" layoutY="279.0" prefHeight="26.0" prefWidth="336.0" promptText="Enter your phone number" />
       <ComboBox fx:id="domaines" layoutX="147.0" layoutY="242.0" onAction="#event" prefHeight="26.0" prefWidth="336.0" />
     </children>
 </AnchorPane>

@@ -19,7 +19,7 @@
                     <Image url="@../../../images/reg.jpg" />
                 </image>
             </ImageView>
-            <Label layoutX="92.0" layoutY="25.0" prefHeight="32.0" prefWidth="211.0" text=" Particiant Registration" textFill="#f2f2f2">
+            <Label layoutX="92.0" layoutY="25.0" prefHeight="32.0" prefWidth="211.0" text=" Add Particiant" textFill="#f2f2f2">
                 <font>
                     <Font name="System Bold" size="18.0" />
                 </font>
@@ -72,6 +72,6 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <ComboBox fx:id="profilParticant" layoutX="159.0" layoutY="270.0" prefHeight="26.0" prefWidth="336.0" />
+      <ComboBox fx:id="profilParticant" layoutX="159.0" layoutY="270.0" onAction="#ProfileEvent" prefHeight="26.0" prefWidth="336.0" />
 </children>
 </AnchorPane>
