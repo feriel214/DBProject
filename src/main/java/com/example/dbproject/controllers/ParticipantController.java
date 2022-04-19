@@ -88,7 +88,7 @@ public class ParticipantController  implements Initializable  {
 
     public void PostParticipant() {
         Participant part=new Participant(parseInt(this.matParticant.getText()),this.nameParticant.getText(),this.lastnameParticant.getText(),this.SelectedProfil,this.birthdateParticant.getValue() );
-
+        System.out.println("Participant "+part.getDate_naissance()+part.getMatricule_participant());
         String query="INSERT INTO participant (matricule_participant,nom,prenom,date_naissance,id_profil) VALUES (";
         String queryValues="'"+part.getMatricule_participant()+"','"+part.getNom()+"','"+part.getPrenom()+"','"+part.getDate_naissance()+"',"+part.getId_profile()+")";
         try{
