@@ -1,4 +1,4 @@
-package com.example.dbproject.controllers;
+package com.example.dbproject;
 
 import com.example.dbproject.DatabaseConnection;
 import com.example.dbproject.models.Formateur;
@@ -8,15 +8,14 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -27,11 +26,12 @@ import java.util.regex.Pattern;
 
 import static java.lang.Integer.parseInt;
 
-public class FormateurController   implements Initializable  {
+public class FormateurController   implements Initializable {
 
     DatabaseConnection connect= new DatabaseConnection();
     Connection connectDB = connect.getConnection();
     Integer SelectedDomain;
+
     @FXML
     private Button addTrainer;
     @FXML
@@ -52,7 +52,22 @@ public class FormateurController   implements Initializable  {
     private TextField telTrainer;
     @FXML
     private TextField trainerName;
-
+    @FXML
+    private TableView<Formateur> FormateuresTable;
+    @FXML
+    private TableColumn<Formateur, Integer> domaineCol;
+    @FXML
+    private TableColumn<Formateur, String> emailCol;
+    @FXML
+    private TableColumn<Formateur,Integer> idCol;
+    @FXML
+    private TableColumn<Formateur, String> nomCol;
+    @FXML
+    private TableColumn<Formateur, String> prenomCol;
+    @FXML
+    private TableColumn<Formateur,Integer> telCol;
+    @FXML
+    private TableColumn<Formateur, ?> ActionsCol;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -68,6 +83,7 @@ public class FormateurController   implements Initializable  {
 
 
     }
+
 
 
     @FXML
@@ -190,6 +206,9 @@ public class FormateurController   implements Initializable  {
         Stage stage=(Stage) cancel.getScene().getWindow();
         stage.close();
     }
+
+
+
 
 
 }

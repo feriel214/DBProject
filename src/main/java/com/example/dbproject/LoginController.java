@@ -1,6 +1,5 @@
-package com.example.dbproject.controllers;
+package com.example.dbproject;
 
-import com.example.dbproject.DatabaseConnection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class LoginController  implements Initializable {
+public class LoginController implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -48,9 +47,8 @@ public class LoginController  implements Initializable {
     }
     @FXML
     void Login(ActionEvent event) {
-
      if (login.getText().isBlank() == false && password.getText().isBlank() == false ){
-         validateLogin();
+         validateLogin(event);
      }else {
          loginerrormsg.setText("Please enter login and password ");
      }
@@ -62,7 +60,7 @@ public class LoginController  implements Initializable {
         Image brandingImage = new Image(brandingFile.toURI().toString());
         brandingImageView.setImage(brandingImage);
     }
-    public void validateLogin(){
+    public void validateLogin(ActionEvent event){
         DatabaseConnection connect= new DatabaseConnection();
         Connection connectDB = connect.getConnection();
 
@@ -73,7 +71,7 @@ public class LoginController  implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1) ==1){
-                    loginerrormsg.setText("Congratulations ! ");
+                    switchToDashboard(event);
                 }else {
 
                     loginerrormsg.setText("Invalid login,Please try again !");
@@ -88,7 +86,15 @@ public class LoginController  implements Initializable {
 
     @FXML
     void CreateAccount(ActionEvent event)throws IOException {
-        Parent root= FXMLLoader.load(getClass().getResource("/registration.fxml"));
+        Parent root= FXMLLoader.load(getClass().getResource("registration.fxml"));
+        stage=(Stage)((Node) event.getSource()).getScene().getWindow();
+        Scene scene=new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    @FXML
+    void switchToDashboard(ActionEvent event)throws IOException {
+        Parent root= FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage=(Stage)((Node) event.getSource()).getScene().getWindow();
         Scene scene=new Scene(root);
         stage.setScene(scene);

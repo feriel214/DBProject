@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.controllers.LoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.LoginController">
    <left>
       <AnchorPane prefHeight="407.0" prefWidth="228.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fx:id="brandingImageView" fitHeight="466.0" fitWidth="320.0" layoutX="-44.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../OneDrive/stage/Phone/DCIM/Facebook/FB_IMG_1568140710491.jpg" />
+                  <Image url="@../../../images/reg.jpg" />
                </image>
             </ImageView>
          </children>
@@ -36,6 +36,11 @@
             </Button>
             <Label fx:id="loginerrormsg" layoutX="19.0" layoutY="86.0" prefHeight="27.0" prefWidth="282.0" />
             <Button fx:id="cancelbtn" layoutX="31.0" layoutY="278.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="271.0" style="-fx-background-color: #E96151;" text="Cancel">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="regBtn" layoutX="31.0" layoutY="330.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="37.0" prefWidth="271.0" style="-fx-background-color: #E96151;" text="Créer un compte">
                <font>
                   <Font size="13.0" />
                </font>
