@@ -5,19 +5,20 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormateurController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormateurTableView">
    <children>
-      <TableView layoutY="100.0" prefHeight="365.0" prefWidth="794.0">
+      <TableView fx:id="FormateuresTable" layoutY="100.0" prefHeight="365.0" prefWidth="794.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="152.0" text="Nom" />
-            <TableColumn prefWidth="105.0" text="Prénom" />
-            <TableColumn prefWidth="119.0" text="Email" />
-            <TableColumn prefWidth="99.0" text="Tel" />
-            <TableColumn prefWidth="106.0" text="Domaine" />
-            <TableColumn prefWidth="137.0" text="Actions" />
+          <TableColumn fx:id="idCol" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nomCol" prefWidth="152.0" text="Nom" />
+            <TableColumn fx:id="prenomCol" prefWidth="105.0" text="Prénom" />
+            <TableColumn fx:id="emailCol" prefWidth="119.0" text="Email" />
+            <TableColumn fx:id="telCol" prefWidth="99.0" text="Tel" />
+            <TableColumn fx:id="domaineCol" prefWidth="106.0" text="Domaine" />
+            <TableColumn fx:id="ActionsCol" prefWidth="137.0" text="Actions" />
         </columns>
       </TableView>
-      <Button fx:id="addformateur" layoutX="599.0" layoutY="31.0" mnemonicParsing="false" onAction="#Addformateur" prefHeight="37.0" prefWidth="160.0" text="Add frmater" textFill="#a11b1b" />
+      <Button fx:id="addformateur" layoutX="599.0" layoutY="31.0" mnemonicParsing="false" onAction="#Addformateur" prefHeight="37.0" prefWidth="160.0" text="Ajouter Formateur" textFill="#a11b1b" />
+    
    </children>
 </AnchorPane>

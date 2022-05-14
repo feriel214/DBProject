@@ -21,10 +21,10 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,44 +59,23 @@ public class FormateurController   implements Initializable {
     private TextField telTrainer;
     @FXML
     private TextField trainerName;
-    @FXML
-    private TableView<Formateur> FormateuresTable;
-    @FXML
-    private TableColumn<Formateur, Integer> domaineCol;
-    @FXML
-    private TableColumn<Formateur, String> emailCol;
-    @FXML
-    private TableColumn<Formateur,Integer> idCol;
-    @FXML
-    private TableColumn<Formateur, String> nomCol;
-    @FXML
-    private TableColumn<Formateur, String> prenomCol;
-    @FXML
-    private TableColumn<Formateur,Integer> telCol;
-    @FXML
-    private TableColumn<Formateur, ?> ActionsCol;
-    @FXML
-    private Button addformateur;
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-/*
-        File brandingFile= new File("C:/Users/fzarr/IdeaProjects/DBProject/src/main/resources/images/reg.jpg");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        logoregistraion.setImage(brandingImage);
+        /*
+                File brandingFile= new File("C:/Users/fzarr/IdeaProjects/DBProject/src/main/resources/images/reg.jpg");
+                Image brandingImage = new Image(brandingFile.toURI().toString());
+                logoregistraion.setImage(brandingImage);
 
-        File homeFile= new File("C:/Users/fzarr/IdeaProjects/DBProject/src/main/resources/images/home_icon.png");
-        Image homeImage = new Image(homeFile.toURI().toString());
-        home.setImage(homeImage);
-*/
+                File homeFile= new File("C:/Users/fzarr/IdeaProjects/DBProject/src/main/resources/images/home_icon.png");
+                Image homeImage = new Image(homeFile.toURI().toString());
+                home.setImage(homeImage);
+        */
 
-        this.getDomains();
 
+      this.getDomains();
 
     }
-
-
 
     @FXML
     void AddTrainer(ActionEvent event) {
@@ -220,8 +199,11 @@ public class FormateurController   implements Initializable {
     }
 
 
+
+
     @FXML
-    void Addformateur(ActionEvent event) throws IOException {
+    void Addformateur(ActionEvent event) throws IOException{
+
         Parent root= FXMLLoader.load(getClass().getResource("add-formateur.fxml"));
         stage=(Stage)((Node) event.getSource()).getScene().getWindow();
         Scene scene=new Scene(root);
