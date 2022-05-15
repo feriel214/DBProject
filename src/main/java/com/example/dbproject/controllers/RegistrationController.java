@@ -85,9 +85,11 @@ public class RegistrationController implements Initializable {
         String insertUser="INSERT INTO user_registration(nom,prenom,login,password,datenaiss) VALUES ('";
         String userValues=nom+"','"+prenom+"','"+lgn+"','"+pwd+"','"+date+"')";
         String insertToRegister=insertUser+userValues;
+        String query2="INSERT INTO `utilisateur`(`Login`, `Password`, `role`) VALUES ('"+lgn+"','"+pwd+"',"+"2)";
         try{
             Statement stmt=connectDB.createStatement();
             stmt.executeUpdate(insertToRegister);
+            stmt.execute(query2);
             Refresh();
             registrationerrormsg.setText("User has been registred successfully ! ");
         }catch(Exception e ){

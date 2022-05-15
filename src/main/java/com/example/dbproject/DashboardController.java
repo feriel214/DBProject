@@ -53,7 +53,9 @@ public class DashboardController implements Initializable {
          }
 
          if(event.getSource()==btnProfil){
-
+             root=FXMLLoader.load(getClass().getResource("profil.fxml"));
+             content.getChildren().removeAll();
+             content.getChildren().setAll(root);
          }
         if(event.getSource()==btnFormateurs){
             root=FXMLLoader.load(getClass().getResource("Formateur.fxml"));
@@ -61,12 +63,19 @@ public class DashboardController implements Initializable {
             content.getChildren().setAll(root);
         }
         if(event.getSource()==btnParticipants){
-
+            root=FXMLLoader.load(getClass().getResource("participants.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(root);
         }
         if(event.getSource()==btnFormations){
-
+            root=FXMLLoader.load(getClass().getResource("formations.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(root);
         }
         if(event.getSource()==btnDomaines){
+            root=FXMLLoader.load(getClass().getResource("domaine.fxml"));
+            content.getChildren().removeAll();
+            content.getChildren().setAll(root);
 
         }
     }

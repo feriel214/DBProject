@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ProfilTableView">
+   <children>
+      <TableView fx:id="profilesTable" layoutX="419.0" prefHeight="464.0" prefWidth="374.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="98.4000244140625" text="ID" />
+            <TableColumn fx:id="libCol" prefWidth="275.199951171875" text="Libelle" />
+         </columns>
+      </TableView>
+      <Button fx:id="addProfil" layoutX="45.0" layoutY="395.0" mnemonicParsing="false" onAction="#AddProfil" prefHeight="37.0" prefWidth="160.0" text="Ajouter Profil" textFill="#a11b1b" />
+   </children>
+</AnchorPane>

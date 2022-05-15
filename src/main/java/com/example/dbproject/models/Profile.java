@@ -3,8 +3,9 @@ package com.example.dbproject.models;
 public class Profile
 {
 
-    private String libelle;
+
     private Integer code_profile;
+    private String libelle;
 
     public Profile(String libelle) {
         this.libelle = libelle;

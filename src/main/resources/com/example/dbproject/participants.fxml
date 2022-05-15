@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ParticipantTableView">
+   <children>
+      <TableView fx:id="ParticipantsTable" layoutX="258.0" prefHeight="464.0" prefWidth="536.0">
+         <columns>
+            <TableColumn fx:id="matCol" prefWidth="85.0" text="Matricule" />
+            <TableColumn fx:id="nomCol" prefWidth="111.0" text="Nom" />
+            <TableColumn fx:id="prenomCol" prefWidth="77.0" text="Prénom" />
+            <TableColumn fx:id="birthCol" prefWidth="149.0" text="Date Naissance" />
+            <TableColumn fx:id="profilCol" prefWidth="113.0" text="Profil" />
+         </columns>
+      </TableView>
+      <Button fx:id="addParticipant" layoutX="40.0" layoutY="393.0" mnemonicParsing="false" onAction="#AddParticipant" prefHeight="37.0" prefWidth="160.0" text="Ajouter Participant" textFill="#a11b1b" />
+   </children>
+</AnchorPane>

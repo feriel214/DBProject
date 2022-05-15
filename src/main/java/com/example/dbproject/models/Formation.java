@@ -18,6 +18,16 @@ public class Formation {
         this.mois = mois;
         this.formateur = formateur;
     }
+    public Formation( Integer code_formation,String intitule, Integer domaine,Integer nombre_jours, Integer annee,Integer mois,Integer formateur) {
+       this.code_formation=code_formation;
+        this.intitule = intitule;
+        this.domaine = domaine;
+        this.nombre_jours = nombre_jours;
+        this.annee = annee;
+        this.mois = mois;
+        this.formateur = formateur;
+    }
+
 
     public Integer getCode_formation() {
         return code_formation;

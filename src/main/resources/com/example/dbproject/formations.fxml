@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormationTableView">
+   <children>
+      <TableView fx:id="FormationTable" layoutX="-1.0" layoutY="97.0" prefHeight="366.0" prefWidth="794.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="73.59997254610062" text="ID" />
+            <TableColumn fx:id="libCol" prefWidth="112.79998779296875" text="Libelle" />
+            <TableColumn fx:id="domaineCol" prefWidth="127.20002746582031" text="Domaine" />
+            <TableColumn fx:id="jrCol" minWidth="9.5999755859375" prefWidth="73.60003662109375" text="Jours" />
+            <TableColumn fx:id="moisCol" prefWidth="80.79998779296875" text="Mois" />
+            <TableColumn fx:id="yearCol" prefWidth="105.5999755859375" text="Année" />
+            <TableColumn fx:id="formateurCol" prefWidth="105.5999755859375" text="Formateur" />
+            <TableColumn fx:id="actionsCol" prefWidth="126.4000244140625" text="Actions" />
+         </columns>
+      </TableView>
+      <Button fx:id="addFormation" layoutX="599.0" layoutY="31.0" mnemonicParsing="false" onAction="#AddFormation" prefHeight="37.0" prefWidth="160.0" text="Ajouter Formation" textFill="#a11b1b" />
+   </children>
+</AnchorPane>
