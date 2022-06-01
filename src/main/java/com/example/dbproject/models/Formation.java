@@ -1,33 +1,31 @@
 package com.example.dbproject.models;
 
+import java.util.Date;
+
 public class Formation {
 
     private Integer code_formation;
     private String intitule;
     private Integer domaine;
     private Integer formateur;
-    private Integer mois;
-    private Integer annee;
-    private Integer nombre_jours;
+    private Date date_debut,date_fin;
 
-    public Formation( String intitule, Integer domaine,Integer nombre_jours, Integer annee,Integer mois,Integer formateur) {
+    public Formation(String intitule, Integer domaine, Integer formateur, Date date_debut, Date date_fin) {
         this.intitule = intitule;
         this.domaine = domaine;
-        this.nombre_jours = nombre_jours;
-        this.annee = annee;
-        this.mois = mois;
         this.formateur = formateur;
-    }
-    public Formation( Integer code_formation,String intitule, Integer domaine,Integer nombre_jours, Integer annee,Integer mois,Integer formateur) {
-       this.code_formation=code_formation;
-        this.intitule = intitule;
-        this.domaine = domaine;
-        this.nombre_jours = nombre_jours;
-        this.annee = annee;
-        this.mois = mois;
-        this.formateur = formateur;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
     }
 
+    public Formation(Integer code_formation, String intitule, Integer domaine, Integer formateur, Date date_debut, Date date_fin) {
+        this.code_formation = code_formation;
+        this.intitule = intitule;
+        this.domaine = domaine;
+        this.formateur = formateur;
+        this.date_debut = date_debut;
+        this.date_fin = date_fin;
+    }
 
     public Integer getCode_formation() {
         return code_formation;
@@ -58,27 +56,19 @@ public class Formation {
         this.formateur = formateur;
     }
 
-    public Integer getMois() {
-        return mois;
+    public Date getDate_debut() {
+        return date_debut;
     }
 
-    public void setMois(Integer mois) {
-        this.mois = mois;
+    public void setDate_debut(Date date_debut) {
+        this.date_debut = date_debut;
     }
 
-    public Integer getAnnee() {
-        return annee;
+    public Date getDate_fin() {
+        return date_fin;
     }
 
-    public void setAnnee(Integer annee) {
-        this.annee = annee;
-    }
-
-    public Integer getNombre_jours() {
-        return nombre_jours;
-    }
-
-    public void setNombre_jours(Integer nombre_jours) {
-        this.nombre_jours = nombre_jours;
+    public void setDate_fin(Date date_fin) {
+        this.date_fin = date_fin;
     }
 }

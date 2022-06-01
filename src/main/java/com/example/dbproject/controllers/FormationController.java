@@ -13,8 +13,10 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -68,15 +70,14 @@ public class FormationController implements Initializable {
         this.Trainer=new ComboBox();
     }
     public void PostTraining(){
-        LocalDate sdate=this.startDate.getValue();
-        LocalDate  edate=this.EndDate.getValue();
-        Period period=Period.between(sdate,edate);
+        Instant instant1 = Instant.from(this.startDate.getValue().atStartOfDay(ZoneId.systemDefault()));
+        Instant instant2 = Instant.from(this.EndDate.getValue().atStartOfDay(ZoneId.systemDefault()));
 
-        Formation formation=new Formation(trainingName.getText(),this.SelectedDomain,period.getDays(),period.getYears(),period.getMonths(),this.SelectedTrainer);
+        Formation formation=new Formation(trainingName.getText(),this.SelectedDomain,this.SelectedTrainer,Date.from(instant1),Date.from(instant2));
 
-         System.out.println(trainingName.getText()+this.SelectedDomain+period.getDays()+period.getYears()+period.getMonths()+this.SelectedTrainer);
-        String query="INSERT INTO formation ( intitule,domaine,nombre_jours,annee,mois,formateur) VALUES (";
-        String queryValues="'"+formation.getIntitule()+"',"+formation.getDomaine()+","+formation.getNombre_jours()+","+formation.getAnnee()+","+formation.getMois()+","+formation.getFormateur()+")";
+
+        String query="INSERT INTO formation ( intitule,domaine,nombre_jours,date_debut,date_fin) VALUES (";
+        String queryValues="'"+formation.getIntitule()+"',"+formation.getDomaine()+","+","+formation.getFormateur()+","+formation.getDate_debut()+","+formation.getDate_fin()+")";
         try{
             Statement stmt=connectDB.createStatement();
             stmt.executeUpdate(query+queryValues);

@@ -91,4 +91,8 @@ public class ParticipantTableView implements Initializable {
     void AddParticipant(ActionEvent event) {
 
     }
+    @FXML
+    void ProfileEvent(ActionEvent event) {
+
+    }
 }
