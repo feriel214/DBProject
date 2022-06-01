@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ProfilTableView">
    <children>
-      <TableView fx:id="profilesTable" layoutX="419.0" prefHeight="464.0" prefWidth="374.0">
+      <TableView fx:id="profilesTable" layoutX="419.0" onMouseClicked="#rowClicked" prefHeight="464.0" prefWidth="374.0">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="98.4000244140625" text="ID" />
             <TableColumn fx:id="libCol" prefWidth="275.199951171875" text="Libelle" />

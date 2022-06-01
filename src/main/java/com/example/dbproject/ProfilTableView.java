@@ -112,7 +112,21 @@ public class ProfilTableView  implements Initializable {
 
     @FXML
     void editProfil(ActionEvent event) {
+        String updateDomaine="UPDATE profil SET `libelle`='"+profLib.getText()+"' WHERE `code_profil`= "+parseInt(Idprofil.getText());
 
+        try{
+            Statement stmt=connectDB.createStatement();
+            stmt.executeUpdate(updateDomaine);
+            Refresh();
+            this.refershTable();
+            this.editBtn.setVisible(false);
+            this.Idprofil.setVisible(false);
+            suppBtn.setVisible(false);
+            this.addProfil.setVisible(true);
+        }catch(Exception e ){
+            e.printStackTrace();
+            e.getCause();
+        }
     }
     public void Refresh(){
         this.Idprofil.setText("");
@@ -138,5 +152,18 @@ public class ProfilTableView  implements Initializable {
             e.getCause();
         }
     }
+
+
+    public void rowClicked(javafx.scene.input.MouseEvent mouseEvent) {
+        Profile clickedom=profilesTable.getSelectionModel().getSelectedItem();
+        this.profLib.setText(String.valueOf(clickedom.getLibelle()));
+        this.Idprofil.setText((clickedom.getCode_profile()).toString());
+        addProfil.setVisible(true);
+        editBtn.setVisible(true);
+        suppBtn.setVisible(true);
+        this.Idprofil.setVisible(true);
+
+    }
+
 
 }
