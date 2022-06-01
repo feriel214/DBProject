@@ -9,10 +9,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormationTableView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormationTableView">
    <children>
-      <TableView fx:id="FormationTable" layoutX="224.0" onMouseClicked="#rowClicked" prefHeight="464.0" prefWidth="570.0">
+      <TableView fx:id="FormationTable" layoutX="224.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="570.0" stylesheets="@tableview.css.css">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="51.0" text="ID" />
             <TableColumn fx:id="libCol" prefWidth="84.0" text="Libelle" />
@@ -22,37 +23,42 @@
             <TableColumn fx:id="formateurCol" prefWidth="133.59991455078125" text="Formateur" />
          </columns>
       </TableView>
-      <TextField fx:id="trainingName" layoutX="14.0" layoutY="102.0" prefHeight="25.0" prefWidth="195.0" promptText="Enter Training Name" />
-      <DatePicker fx:id="startDate" layoutX="14.0" layoutY="141.0" prefHeight="25.0" prefWidth="195.0" promptText="Enter Start Date" />
-      <ComboBox fx:id="Domaine" layoutX="14.0" layoutY="243.0" onAction="#DomainEvent" prefHeight="26.0" prefWidth="195.0" />
-      <DatePicker fx:id="EndDate" layoutX="14.0" layoutY="183.0" prefHeight="25.0" prefWidth="195.0" promptText="Enter End Date" />
-      <ComboBox fx:id="Trainer" layoutX="14.0" layoutY="304.0" onAction="#TrainerEvent" prefHeight="26.0" prefWidth="195.0" />
-      <Label layoutX="14.0" layoutY="221.0" prefHeight="22.0" prefWidth="133.0" text="Domaine">
+      <TextField fx:id="trainingName" layoutX="14.0" layoutY="140.0" prefHeight="25.0" prefWidth="195.0" promptText="Entrer nom du formateur" style="-fx-background-color: transparent; -fx-border-color: #191970; -fx-border-width: 0px 0px 2px 0px;" />
+      <DatePicker fx:id="startDate" layoutX="14.0" layoutY="184.0" prefHeight="25.0" prefWidth="195.0" promptText="Entrer Date debut" />
+      <ComboBox fx:id="Domaine" layoutX="14.0" layoutY="296.0" onAction="#DomainEvent" prefHeight="26.0" prefWidth="195.0" />
+      <DatePicker fx:id="EndDate" layoutX="14.0" layoutY="225.0" prefHeight="25.0" prefWidth="195.0" promptText="Entrer Date fin" />
+      <ComboBox fx:id="Trainer" layoutX="14.0" layoutY="354.0" onAction="#TrainerEvent" prefHeight="26.0" prefWidth="195.0" />
+      <Label layoutX="14.0" layoutY="266.0" prefHeight="22.0" prefWidth="133.0" text="Domaine" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="282.0" prefHeight="22.0" prefWidth="89.0" text="Formateur">
+      <Label layoutX="14.0" layoutY="332.0" prefHeight="22.0" prefWidth="89.0" text="Formateur" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="addTraining" layoutX="14.0" layoutY="341.0" mnemonicParsing="false" onAction="#Registration" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #E96151;" text="Ajouter ">
+      <Button fx:id="addTraining" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#Registration" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #800000;" text="Ajouter " textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Label fx:id="registrationerrormsg" layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="195.0" />
-      <Button fx:id="editBtn" layoutX="14.0" layoutY="341.0" mnemonicParsing="false" onAction="#editFormation" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #E96151;" text="Modifier">
+      <Label fx:id="registrationerrormsg" layoutX="14.0" layoutY="52.0" prefHeight="38.0" prefWidth="195.0" />
+      <Button fx:id="editBtn" layoutX="14.0" layoutY="423.0" mnemonicParsing="false" onAction="#editFormation" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #800000;" text="Modifier" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="idForm" disable="true" layoutX="14.0" layoutY="59.0" prefHeight="22.0" prefWidth="195.0" />
-      <Button fx:id="suppBtn" layoutX="14.0" layoutY="391.0" mnemonicParsing="false" onAction="#suppFormation" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #E96151;" text="Supprimer">
+      <TextField fx:id="idForm" disable="true" layoutX="14.0" layoutY="104.0" prefHeight="22.0" prefWidth="195.0" />
+      <Button fx:id="suppBtn" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#suppFormation" prefHeight="38.0" prefWidth="195.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
+      <Text fill="MIDNIGHTBLUE" layoutX="28.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formations" textAlignment="CENTER" wrappingWidth="150.13671875">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

@@ -41,6 +41,8 @@ public class DomaineTableView implements Initializable  {
     @FXML
     private Button editBtn;
     @FXML
+    private Button suppBtn;
+    @FXML
     private TextField domaineLibelle;
     ObservableList<Domaine> domainesList = FXCollections.observableArrayList();
     Domaine domain = null ;
@@ -50,6 +52,8 @@ public class DomaineTableView implements Initializable  {
         idCol.setCellValueFactory(new PropertyValueFactory<>("code_domaine"));
         libCol.setCellValueFactory(new PropertyValueFactory<>("libelle"));
         editBtn.setVisible(false);
+        this.IdDom.setVisible(false);
+        this.suppBtn.setVisible(false);
         loadData();
     }
 
@@ -123,6 +127,8 @@ public class DomaineTableView implements Initializable  {
         this.IdDom.setText((clickedom.getCode_domaine()).toString());
         AddDomaineBtn.setVisible(true);
         editBtn.setVisible(true);
+        suppBtn.setVisible(true);
+        this.IdDom.setVisible(true);
 
     }
 
@@ -136,13 +142,33 @@ public class DomaineTableView implements Initializable  {
             stmt.executeUpdate(updateDomaine);
             Refresh();
             this.refershTable();
-            //domaineaddmsg.setText("Domaine Modifié Avec succées!");
             this.editBtn.setVisible(false);
+            this.IdDom.setVisible(false);
+            suppBtn.setVisible(false);
             this.AddDomaineBtn.setVisible(true);
         }catch(Exception e ){
             e.printStackTrace();
             e.getCause();
         }
 
+    }
+
+
+    @FXML
+    void suppItem(ActionEvent event) {
+        String deleteFormation="DELETE FROM `domaine` WHERE `code_domaine`= "+parseInt(IdDom.getText());
+        try{
+            Statement stmt=connectDB.createStatement();
+            stmt.executeUpdate(deleteFormation);
+            Refresh();
+            this.refershTable();
+            this.editBtn.setVisible(false);
+            this.suppBtn.setVisible(false);
+            this.AddDomaineBtn.setVisible(true);
+            this.IdDom.setVisible(false);
+        }catch(Exception e ){
+            e.printStackTrace();
+            e.getCause();
+        }
     }
 }

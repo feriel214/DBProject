@@ -1,5 +1,6 @@
 package com.example.dbproject;
 
+import com.example.dbproject.models.Domaine;
 import com.example.dbproject.models.Profile;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -17,13 +19,23 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
+import static java.lang.Integer.parseInt;
+
 public class ProfilTableView  implements Initializable {
 
 
     DatabaseConnection connect= new DatabaseConnection();
     Connection connectDB = connect.getConnection();
     @FXML
+    private TextField Idprofil;
+    @FXML
     private Button addProfil;
+    @FXML
+    private Button editBtn;
+    @FXML
+    private Button suppBtn;
+    @FXML
+    private TextField profLib;
     @FXML
     private TableView<Profile> profilesTable;
     @FXML
@@ -40,7 +52,9 @@ public class ProfilTableView  implements Initializable {
     }
     private void loadData() {
         this.refershTable();
-
+        Idprofil.setVisible(false);
+        suppBtn.setVisible(false);
+        editBtn.setVisible(false);
         idCol.setCellValueFactory(new PropertyValueFactory<>("code_profile"));
         libCol.setCellValueFactory(new PropertyValueFactory<>("libelle"));
 
@@ -73,8 +87,56 @@ public class ProfilTableView  implements Initializable {
 
 
 
+
+
+
     @FXML
     void AddProfil(ActionEvent event) {
+        DatabaseConnection connect= new DatabaseConnection();
+        Connection connectDB = connect.getConnection();
+        Domaine domaine=new Domaine(profLib.getText());
+
+        String insertDomaine="INSERT INTO domaine (libelle) VALUES ('"+domaine.getLibelle()+"')";
+
+        try{
+            Statement stmt=connectDB.createStatement();
+            stmt.executeUpdate(insertDomaine);
+            Refresh();
+            this.refershTable();
+            //domaineaddmsg.setText("Domaine Ajouter Avec succées!");
+        }catch(Exception e ){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
+    @FXML
+    void editProfil(ActionEvent event) {
 
     }
+    public void Refresh(){
+        this.Idprofil.setText("");
+        this.profLib.setText("");
+
+    }
+
+
+    @FXML
+    void suppItem(ActionEvent event) {
+        String deleteFormation="DELETE FROM `profil` WHERE `code_profil`= "+parseInt(Idprofil.getText());
+        try{
+            Statement stmt=connectDB.createStatement();
+            stmt.executeUpdate(deleteFormation);
+            Refresh();
+            this.refershTable();
+            this.editBtn.setVisible(false);
+            this.suppBtn.setVisible(false);
+            this.addProfil.setVisible(true);
+            this.Idprofil.setVisible(false);
+        }catch(Exception e ){
+            e.printStackTrace();
+            e.getCause();
+        }
+    }
+
 }

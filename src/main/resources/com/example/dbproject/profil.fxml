@@ -17,12 +17,18 @@
          </columns>
       </TableView>
       <Button fx:id="addProfil" layoutX="47.0" layoutY="273.0" mnemonicParsing="false" onAction="#AddProfil" prefHeight="37.0" prefWidth="160.0" text="Ajouter Profil" textFill="#a11b1b" />
-      <TextField fx:id="IdDom" disable="true" layoutX="47.0" layoutY="118.0" prefHeight="38.0" prefWidth="336.0" />
-      <TextField fx:id="domaineLibelle" layoutX="47.0" layoutY="181.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Profil" />
+      <TextField fx:id="Idprofil" disable="true" layoutX="47.0" layoutY="118.0" prefHeight="38.0" prefWidth="336.0" />
+      <TextField fx:id="profLib" layoutX="47.0" layoutY="181.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Profil" />
       <Label layoutX="32.0" layoutY="33.0" prefHeight="22.0" prefWidth="115.0" text="Profiles">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <Button fx:id="suppBtn" layoutX="215.0" layoutY="272.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #E96151;" text="Supprimer">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="editBtn" layoutX="47.0" layoutY="272.0" mnemonicParsing="false" onAction="#editProfil" prefHeight="37.0" prefWidth="160.0" text="Modifier" textFill="#a11b1b" />
    </children>
 </AnchorPane>
