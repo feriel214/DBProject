@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormationTableView">
    <children>
-      <TableView fx:id="FormationTable" layoutX="224.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="570.0" stylesheets="@tableview.css.css">
+      <TableView fx:id="FormationTable" layoutX="224.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="570.0" stylesheets="@../../../styles/tableview.css.css">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="51.0" text="ID" />
             <TableColumn fx:id="libCol" prefWidth="84.0" text="Libelle" />

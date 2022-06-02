@@ -9,10 +9,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ParticipantTableView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ParticipantTableView">
    <children>
-      <TableView fx:id="ParticipantsTable" layoutX="258.0" onMouseClicked="#rowClicked" prefHeight="464.0" prefWidth="536.0">
+      <TableView fx:id="ParticipantsTable" layoutX="258.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="536.0" stylesheets="@../../../styles/tableview.css.css">
          <columns>
             <TableColumn fx:id="matCol" prefWidth="85.0" text="Matricule" />
             <TableColumn fx:id="nomCol" prefWidth="111.0" text="Nom" />
@@ -21,20 +22,28 @@
             <TableColumn fx:id="profilCol" prefWidth="113.0" text="Profil" />
          </columns>
       </TableView>
-      <Button fx:id="addParticipant" layoutX="18.0" layoutY="333.0" mnemonicParsing="false" onAction="#AddParticipant" prefHeight="38.0" prefWidth="212.0" text="Ajouter Participant" textFill="#a11b1b" />
-      <TextField fx:id="nameParticant" layoutX="18.0" layoutY="167.0" prefHeight="26.0" prefWidth="212.0" promptText="Enter your Firstname" />
-      <TextField fx:id="lastnameParticant" layoutX="18.0" layoutY="210.0" prefHeight="26.0" prefWidth="212.0" promptText="Enter Your Lastname" />
-      <DatePicker fx:id="birthdateParticant" layoutX="18.0" layoutY="246.0" prefHeight="26.0" prefWidth="212.0" />
-      <TextField fx:id="matParticant" layoutX="18.0" layoutY="129.0" prefHeight="26.0" prefWidth="212.0" promptText="Enter your Matricule" />
-      <ComboBox fx:id="profilParticant" layoutX="18.0" layoutY="286.0" onAction="#ProfileEvent" prefHeight="26.0" prefWidth="212.0" />
-      <Button fx:id="editBtn" layoutX="18.0" layoutY="333.0" mnemonicParsing="false" onAction="#editParticipant" prefHeight="38.0" prefWidth="212.0" text="Modifier Participant" textFill="#a11b1b" />
-      <Label layoutX="18.0" layoutY="12.0" prefHeight="38.0" prefWidth="162.0" text="Participants" />
+      <Button fx:id="addParticipant" layoutX="18.0" layoutY="384.0" mnemonicParsing="false" onAction="#AddParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Ajouter " textFill="WHITE" />
+      <TextField fx:id="nameParticant" layoutX="18.0" layoutY="195.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre nom" />
+      <TextField fx:id="lastnameParticant" layoutX="18.0" layoutY="232.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre prenom" />
+      <DatePicker fx:id="birthdateParticant" layoutX="18.0" layoutY="275.0" prefHeight="26.0" prefWidth="212.0" />
+      <TextField fx:id="matParticant" layoutX="18.0" layoutY="155.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre matricule" />
+      <ComboBox fx:id="profilParticant" layoutX="18.0" layoutY="345.0" onAction="#ProfileEvent" prefHeight="26.0" prefWidth="212.0" />
+      <Button fx:id="editBtn" layoutX="18.0" layoutY="384.0" mnemonicParsing="false" onAction="#editParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Modifier " textFill="WHITE" />
+      <Label layoutX="14.0" prefHeight="38.0" prefWidth="162.0" text="Participants" textFill="MIDNIGHTBLUE">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font></Label>
       <Label fx:id="registrationerrormsg" layoutX="18.0" layoutY="50.0" prefHeight="38.0" prefWidth="212.0" />
-      <Button fx:id="suppBtn" layoutX="18.0" layoutY="389.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
+      <Button fx:id="suppBtn" layoutX="18.0" layoutY="441.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="idPart" disable="true" layoutX="18.0" layoutY="88.0" prefHeight="22.0" prefWidth="195.0" />
+      <TextField fx:id="idPart" disable="true" layoutX="18.0" layoutY="115.0" prefHeight="25.0" prefWidth="212.0" />
+      <Text fill="MAROON" layoutX="18.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="80.13671875">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

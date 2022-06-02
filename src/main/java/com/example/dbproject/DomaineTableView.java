@@ -21,11 +21,8 @@ import static java.lang.Integer.parseInt;
 
 public class DomaineTableView implements Initializable  {
 
-
-
     DatabaseConnection connect= new DatabaseConnection();
     Connection connectDB = connect.getConnection();
-
     @FXML
     private Button AddDomaineBtn;
     @FXML
@@ -34,8 +31,6 @@ public class DomaineTableView implements Initializable  {
     private TableColumn<Domaine, Integer> idCol;
     @FXML
     private TableColumn<Domaine,String> libCol;
-    @FXML
-    private Label domaineaddmsg;
     @FXML
     private TextField IdDom;
     @FXML

@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ProfilTableView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.ProfilTableView">
    <children>
-      <TableView fx:id="profilesTable" layoutX="419.0" onMouseClicked="#rowClicked" prefHeight="464.0" prefWidth="374.0">
+      <TableView fx:id="profilesTable" layoutX="419.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="374.0" stylesheets="@../../../styles/tableview.css.css">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="98.4000244140625" text="ID" />
             <TableColumn fx:id="libCol" prefWidth="275.199951171875" text="Libelle" />
          </columns>
       </TableView>
-      <Button fx:id="addProfil" layoutX="47.0" layoutY="273.0" mnemonicParsing="false" onAction="#AddProfil" prefHeight="37.0" prefWidth="160.0" text="Ajouter Profil" textFill="#a11b1b" />
+      <Button fx:id="addProfil" layoutX="103.0" layoutY="273.0" mnemonicParsing="false" onAction="#AddProfil" prefHeight="37.0" prefWidth="192.0" style="-fx-background-color: #800000;" text="Ajouter Profil" textFill="WHITE" />
       <TextField fx:id="Idprofil" disable="true" layoutX="47.0" layoutY="118.0" prefHeight="38.0" prefWidth="336.0" />
-      <TextField fx:id="profLib" layoutX="47.0" layoutY="181.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Profil" />
-      <Label layoutX="32.0" layoutY="33.0" prefHeight="22.0" prefWidth="115.0" text="Profiles">
+      <TextField fx:id="profLib" layoutX="47.0" layoutY="181.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Profil" style="-fx-background-color: transparent; -fx-border-color: #191970; -fx-border-width: 0px 0px 2px 0px;" />
+      <Label layoutX="14.0" layoutY="6.0" prefHeight="22.0" prefWidth="115.0" text="Profiles" textFill="MIDNIGHTBLUE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="25.0" />
          </font>
       </Label>
-      <Button fx:id="suppBtn" layoutX="215.0" layoutY="272.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #E96151;" text="Supprimer">
+      <Button fx:id="suppBtn" layoutX="103.0" layoutY="324.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="192.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="editBtn" layoutX="47.0" layoutY="272.0" mnemonicParsing="false" onAction="#editProfil" prefHeight="37.0" prefWidth="160.0" text="Modifier" textFill="#a11b1b" />
+      <Button fx:id="editBtn" layoutX="103.0" layoutY="273.0" mnemonicParsing="false" onAction="#editProfil" prefHeight="37.0" prefWidth="192.0" style="-fx-background-color: #800000;" text="Modifier" textFill="WHITE" />
    </children>
 </AnchorPane>

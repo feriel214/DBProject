@@ -56,9 +56,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        File brandingFile= new File("C:/Users/fzarr/OneDrive/stage/Phone/DCIM/Facebook/FB_IMG_1568140710491.jpg");
-        Image brandingImage = new Image(brandingFile.toURI().toString());
-        brandingImageView.setImage(brandingImage);
+
     }
     public void validateLogin(ActionEvent event){
         DatabaseConnection connect= new DatabaseConnection();

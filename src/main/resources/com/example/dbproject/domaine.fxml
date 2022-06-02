@@ -8,32 +8,32 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="464.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.DomaineTableView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" stylesheets="@../../../styles/tableview.css.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.DomaineTableView">
    <children>
-      <TableView fx:id="domainesTable" layoutX="419.0" onMouseClicked="#rowClicked" prefHeight="464.0" prefWidth="374.0">
+      <TableView fx:id="domainesTable" layoutX="419.0" onMouseClicked="#rowClicked" prefHeight="576.0" prefWidth="374.0">
          <columns>
             <TableColumn fx:id="idCol" prefWidth="98.4000244140625" text="ID" />
             <TableColumn fx:id="libCol" prefWidth="275.199951171875" text="Libelle" />
          </columns>
       </TableView>
-      <Label layoutX="22.0" layoutY="23.0" prefHeight="22.0" prefWidth="115.0" text="Domaines">
+      <Label layoutX="14.0" prefHeight="35.0" prefWidth="136.0" text="Domaines" textFill="MIDNIGHTBLUE">
          <font>
-            <Font name="System Bold" size="13.0" />
+            <Font name="System Bold" size="24.0" />
          </font>
       </Label>
       <TextField fx:id="IdDom" disable="true" layoutX="37.0" layoutY="108.0" prefHeight="38.0" prefWidth="336.0" />
-      <Button fx:id="AddDomaineBtn" layoutX="37.0" layoutY="255.0" mnemonicParsing="false" onAction="#AddDomaine" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #E96151;" text="Ajouter ">
+      <Button fx:id="AddDomaineBtn" layoutX="103.0" layoutY="255.0" mnemonicParsing="false" onAction="#AddDomaine" prefHeight="38.0" prefWidth="178.0" style="-fx-background-color: #800000;" text="Ajouter " textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="domaineLibelle" layoutX="37.0" layoutY="171.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Domaine" />
-      <Button fx:id="editBtn" layoutX="37.0" layoutY="255.0" mnemonicParsing="false" onAction="#editDomaine" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #E96151;" text="Modifier">
+      <TextField fx:id="domaineLibelle" layoutX="37.0" layoutY="171.0" prefHeight="38.0" prefWidth="336.0" promptText="Nom du Domaine" style="-fx-background-color: transparent; -fx-border-color: #191970; -fx-border-width: 0px 0px 2px 0px;" />
+      <Button fx:id="editBtn" layoutX="100.0" layoutY="255.0" mnemonicParsing="false" onAction="#editDomaine" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: #800000;" text="Modifier" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="suppBtn" layoutX="205.0" layoutY="255.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="153.0" style="-fx-background-color: #E96151;" text="Supprimer">
+      <Button fx:id="suppBtn" layoutX="100.0" layoutY="328.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="184.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

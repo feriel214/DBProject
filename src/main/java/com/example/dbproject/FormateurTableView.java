@@ -1,47 +1,29 @@
 package com.example.dbproject;
 
 import com.example.dbproject.models.Formateur;
-import com.example.dbproject.models.Participant;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
-import org.w3c.dom.events.MouseEvent;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
-import java.time.LocalDate;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 import static java.lang.Integer.parseInt;
 
 public class FormateurTableView implements Initializable {
 
     DatabaseConnection connect= new DatabaseConnection();
     Connection connectDB = connect.getConnection();
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     Integer SelectedDomain;
     @FXML
     private Button addformateur;
@@ -119,7 +101,7 @@ public class FormateurTableView implements Initializable {
         prenomCol.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         emailCol.setCellValueFactory(new PropertyValueFactory<>("email"));
         telCol.setCellValueFactory(new PropertyValueFactory<>("tel"));
-        domaineCol.setCellValueFactory(new PropertyValueFactory<>("code_domaine"));
+        //domaineCol.setCellValueFactory(new PropertyValueFactory<>("code_domaine"));
 
 
     }
@@ -203,11 +185,8 @@ public class FormateurTableView implements Initializable {
     }
 
     public void getDomains(){
-        //Declare a SELECT statement
         String request="SELECT * FROM domaine";
-        //Execute SELECT statement
         try{
-            //Get ResultSet from dbExecuteQuery method
             Statement stmt=connectDB.createStatement();
             ResultSet domaines  = stmt.executeQuery(request);
 

@@ -5,79 +5,62 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.controllers.RegistrationController">
    <children>
-      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #E96151;">
+      <AnchorPane prefHeight="82.0" prefWidth="520.0" style="-fx-background-color: #191970;">
          <children>
-            <ImageView fx:id="logoregistraion" fitHeight="42.0" fitWidth="69.0" layoutX="32.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/reg.jpg" />
-               </image>
-            </ImageView>
-            <Label layoutX="92.0" layoutY="25.0" prefHeight="32.0" prefWidth="175.0" text=" User Registration" textFill="#f2f2f2">
+            <Label layoutX="30.0" layoutY="25.0" prefHeight="35.0" prefWidth="238.0" text="Creation  de compte " textFill="#f2f2f2">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <ImageView fx:id="home" fitHeight="42.0" fitWidth="69.0" layoutX="458.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../images/home_icon.png" />
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
-      <Label layoutX="26.0" layoutY="118.0" prefHeight="22.0" prefWidth="89.0" text="Firstname">
+      <Label layoutX="26.0" layoutY="118.0" prefHeight="22.0" prefWidth="89.0" text="Nom" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="firstname" layoutX="159.0" layoutY="117.0" prefHeight="25.0" prefWidth="336.0" promptText="Enter your Firstname" />
-      <Label layoutX="26.0" layoutY="151.0" prefHeight="22.0" prefWidth="89.0" text="Lastname">
+      <TextField fx:id="firstname" layoutX="159.0" layoutY="149.0" prefHeight="25.0" prefWidth="336.0" promptText="Entrer votre prenom" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
+      <Label layoutX="26.0" layoutY="151.0" prefHeight="22.0" prefWidth="89.0" text="Prenom" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="lastname" layoutX="159.0" layoutY="150.0" prefHeight="25.0" prefWidth="336.0" promptText="Enter Your Lastname" />
-      <Label layoutX="26.0" layoutY="187.0" prefHeight="22.0" prefWidth="89.0" text="Login">
+      <TextField fx:id="lastname" layoutX="159.0" layoutY="116.0" prefHeight="25.0" prefWidth="336.0" promptText="Entrer votre nom" style="-fx-background-color: transaparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
+      <Label layoutX="26.0" layoutY="187.0" prefHeight="22.0" prefWidth="89.0" text="E-mail" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="login" layoutX="159.0" layoutY="186.0" prefHeight="25.0" prefWidth="336.0" promptText="Enter Your Login" />
-      <Label layoutX="26.0" layoutY="220.0" prefHeight="22.0" prefWidth="89.0" text="Password">
+      <TextField fx:id="login" layoutX="159.0" layoutY="186.0" prefHeight="25.0" prefWidth="336.0" promptText="Entrer votre Email" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
+      <Label layoutX="26.0" layoutY="220.0" prefHeight="22.0" prefWidth="89.0" text="Mot de passe" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" layoutX="159.0" layoutY="219.0" prefHeight="25.0" prefWidth="336.0" promptText="Enter Your Password" />
-      <Label layoutX="26.0" layoutY="252.0" prefHeight="22.0" prefWidth="133.0" text="Confirm Password">
+      <PasswordField fx:id="password" layoutX="159.0" layoutY="219.0" prefHeight="25.0" prefWidth="336.0" promptText="Entrer votre mot de passe" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
+      <Label layoutX="26.0" layoutY="252.0" prefHeight="22.0" prefWidth="133.0" text="Confirmer MDP" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <PasswordField fx:id="confirmpwd" layoutX="159.0" layoutY="251.0" prefHeight="25.0" prefWidth="336.0" promptText="Confirm  Your Password" />
-      <DatePicker fx:id="birthdate" layoutX="159.0" layoutY="307.0" prefHeight="25.0" prefWidth="336.0" />
-      <Label layoutX="26.0" layoutY="308.0" prefHeight="22.0" prefWidth="133.0" text="Birth Date">
+      <PasswordField fx:id="confirmpwd" layoutX="159.0" layoutY="251.0" prefHeight="25.0" prefWidth="336.0" promptText="Confirmer votre de mot de passe" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
+      <DatePicker fx:id="birthdate" layoutX="159.0" layoutY="308.0" prefHeight="25.0" prefWidth="336.0" promptText="aaaa-mm-dd" />
+      <Label layoutX="26.0" layoutY="308.0" prefHeight="22.0" prefWidth="133.0" text="Date de naissance" textFill="MAROON">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button fx:id="registrationBtn" layoutX="159.0" layoutY="342.0" mnemonicParsing="false" onAction="#Registration" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #E96151;" text="Registration">
+      <Button fx:id="registrationBtn" layoutX="228.0" layoutY="343.0" mnemonicParsing="false" onAction="#Registration" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #800000;" text="Registration" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
-      <Button fx:id="cancel" layoutX="331.0" layoutY="342.0" mnemonicParsing="false" onAction="#Cancel" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #E96151;" text="Cancel">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </Button>
-      <Label fx:id="registrationerrormsg" layoutX="34.0" layoutY="93.0" prefHeight="22.0" prefWidth="467.0" />
+      <Label fx:id="registrationerrormsg" layoutX="39.0" layoutY="151.0" prefHeight="22.0" prefWidth="467.0" />
       <Label fx:id="pwdmatchmsg" layoutX="27.0" layoutY="283.0" prefHeight="15.0" prefWidth="467.0" />
    </children>
 </AnchorPane>
