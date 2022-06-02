@@ -7,6 +7,16 @@ public class Participant {
     private Integer matricule_participant;
     private String  nom;
     private String  prenom;
+    private String password;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     private Integer id_profile;
     private LocalDate date_naissance;
 
@@ -50,11 +60,20 @@ public class Participant {
         this.date_naissance = date_naissance;
     }
 
+    public Participant(Integer matricule_participant, String nom, String prenom, Integer id_profile, LocalDate date_naissance,String password) {
+        this.matricule_participant = matricule_participant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.id_profile = id_profile;
+        this.date_naissance = date_naissance;
+        this.password=password;
+    }
     public Participant(Integer matricule_participant, String nom, String prenom, Integer id_profile, LocalDate date_naissance) {
         this.matricule_participant = matricule_participant;
         this.nom = nom;
         this.prenom = prenom;
         this.id_profile = id_profile;
         this.date_naissance = date_naissance;
+
     }
 }

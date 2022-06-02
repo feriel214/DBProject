@@ -97,18 +97,17 @@ public class FormationTableView implements Initializable {
 
 
         Formation formation=new Formation(trainingName.getText(),this.SelectedDomain,this.SelectedTrainer,Date.from(instant1),Date.from(instant2));
-        System.out.println("formation object "+formation.getDate_fin()+"   "+formation.getDate_debut());
+
 
 
         String query="INSERT INTO formation (intitule,domaine,formateur,date_debut,date_fin) VALUES (";
-        String queryValues="'"+formation.getIntitule()+"',"+formation.getDomaine()+","+formation.getFormateur()+",'"+formation.getDate_debut()+"','"+formation.getDate_fin()+"')";
+        String queryValues="'"+formation.getIntitule()+"',"+formation.getDomaine()+","+formation.getFormateur()+",'"+this.startDate.getValue()+"','"+this.EndDate.getValue()+"')";
         try{
             Statement stmt=connectDB.createStatement();
             stmt.executeUpdate(query+queryValues);
             Refresh();
-            //refershTable();
-            registrationerrormsg.setText("Training has been addedd successfully !");
-            registrationerrormsg.setStyle("color:green");
+            refershTable();
+
 
         }catch(Exception e ){
             e.printStackTrace();

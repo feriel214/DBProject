@@ -19,7 +19,7 @@ public class DashboardUser implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-
+    String login;
 
 
     @FXML
@@ -37,7 +37,13 @@ public class DashboardUser implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        try {
+            root=FXMLLoader.load(getClass().getResource("profileUser.fxml"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        content.getChildren().removeAll();
+        content.getChildren().setAll(root);
     }
 
     @FXML
@@ -49,7 +55,6 @@ public class DashboardUser implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
-
         if(event.getSource()==btnProfil){
             root=FXMLLoader.load(getClass().getResource("profileUser.fxml"));
             content.getChildren().removeAll();
@@ -62,7 +67,7 @@ public class DashboardUser implements Initializable {
             content.getChildren().setAll(root);
         }
         if(event.getSource()==btnFormations){
-            root=FXMLLoader.load(getClass().getResource("formations_participants.fxml"));
+            root=FXMLLoader.load(getClass().getResource("FormationsUser.fxml"));
             content.getChildren().removeAll();
             content.getChildren().setAll(root);
         }

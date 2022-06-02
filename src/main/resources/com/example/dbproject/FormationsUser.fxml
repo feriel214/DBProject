@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dbproject.FormationUserController">
+   <children>
+      <Label layoutX="23.0" layoutY="14.0" prefHeight="35.0" prefWidth="336.0" text="Liste Des Formations" textFill="MAROON">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="FormationTable" layoutX="4.0" layoutY="120.0" onMouseClicked="#rowClicked" prefHeight="456.0" prefWidth="786.0" stylesheets="@../../../styles/tableview.css.css">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="39.0" text="ID" />
+            <TableColumn fx:id="libCol" prefWidth="147.0" text="Libelle" />
+            <TableColumn fx:id="domaineCol" prefWidth="156.0" text="Domaine" />
+            <TableColumn fx:id="date_debutCol" minWidth="9.5999755859375" prefWidth="128.0" text="Date Début" />
+            <TableColumn fx:id="date_finCol" prefWidth="118.0" text="Date Fin" />
+            <TableColumn fx:id="formateurCol" prefWidth="197.0" text="Formateur" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

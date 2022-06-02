@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -22,28 +23,29 @@
             <TableColumn fx:id="profilCol" prefWidth="113.0" text="Profil" />
          </columns>
       </TableView>
-      <Button fx:id="addParticipant" layoutX="18.0" layoutY="384.0" mnemonicParsing="false" onAction="#AddParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Ajouter " textFill="WHITE" />
+      <Button fx:id="addParticipant" layoutX="18.0" layoutY="441.0" mnemonicParsing="false" onAction="#AddParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Ajouter " textFill="WHITE" />
       <TextField fx:id="nameParticant" layoutX="18.0" layoutY="195.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre nom" />
       <TextField fx:id="lastnameParticant" layoutX="18.0" layoutY="232.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre prenom" />
       <DatePicker fx:id="birthdateParticant" layoutX="18.0" layoutY="275.0" prefHeight="26.0" prefWidth="212.0" />
       <TextField fx:id="matParticant" layoutX="18.0" layoutY="155.0" prefHeight="26.0" prefWidth="212.0" promptText="Entrer votre matricule" />
-      <ComboBox fx:id="profilParticant" layoutX="18.0" layoutY="345.0" onAction="#ProfileEvent" prefHeight="26.0" prefWidth="212.0" />
-      <Button fx:id="editBtn" layoutX="18.0" layoutY="384.0" mnemonicParsing="false" onAction="#editParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Modifier " textFill="WHITE" />
+      <ComboBox fx:id="profilParticant" layoutX="18.0" layoutY="402.0" onAction="#ProfileEvent" prefHeight="26.0" prefWidth="212.0" />
+      <Button fx:id="editBtn" layoutX="18.0" layoutY="441.0" mnemonicParsing="false" onAction="#editParticipant" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Modifier " textFill="WHITE" />
       <Label layoutX="14.0" prefHeight="38.0" prefWidth="162.0" text="Participants" textFill="MIDNIGHTBLUE">
          <font>
             <Font name="System Bold" size="22.0" />
          </font></Label>
       <Label fx:id="registrationerrormsg" layoutX="18.0" layoutY="50.0" prefHeight="38.0" prefWidth="212.0" />
-      <Button fx:id="suppBtn" layoutX="18.0" layoutY="441.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
+      <Button fx:id="suppBtn" layoutX="18.0" layoutY="498.0" mnemonicParsing="false" onAction="#suppItem" prefHeight="38.0" prefWidth="212.0" style="-fx-background-color: #800000;" text="Supprimer" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
       </Button>
       <TextField fx:id="idPart" disable="true" layoutX="18.0" layoutY="115.0" prefHeight="25.0" prefWidth="212.0" />
-      <Text fill="MAROON" layoutX="18.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="80.13671875">
+      <Text fill="MAROON" layoutX="18.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Profile" wrappingWidth="80.13671875">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </Text>
+      <PasswordField fx:id="password" layoutX="18.0" layoutY="325.0" prefHeight="28.0" prefWidth="212.0" promptText="Entrer votre mot de passe" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #191970;" />
    </children>
 </AnchorPane>

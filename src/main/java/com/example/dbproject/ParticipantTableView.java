@@ -58,6 +58,8 @@ public class ParticipantTableView implements Initializable {
     @FXML
     private TableColumn<Participant,Integer> profilCol;
     ObservableList<Participant>  participantsList = FXCollections.observableArrayList();
+    @FXML
+    private PasswordField password;
 
 
 
@@ -144,9 +146,8 @@ public class ParticipantTableView implements Initializable {
             stmt.executeUpdate(updateFormation);
             Refresh();
             this.refershTable();
-
             this.editBtn.setVisible(false);
-            this.suppBtn.setVisible(false);
+           this.suppBtn.setVisible(false);
             this.addParticipant.setVisible(true);
             this.idPart.setVisible(false);
         }catch(Exception e ){
@@ -181,17 +182,20 @@ public class ParticipantTableView implements Initializable {
         this.profilParticant.setValue(null);
         this.matParticant.setText("");
         this.birthdateParticant.setValue(null);
+        this.password.setText("");
     }
 
     @FXML
     void AddParticipant(ActionEvent event) {
-        Participant part=new Participant(parseInt(this.matParticant.getText()),this.nameParticant.getText(),this.lastnameParticant.getText(),this.SelectedProfil,this.birthdateParticant.getValue() );
+        Participant part=new Participant(parseInt(this.matParticant.getText()),this.nameParticant.getText(),this.lastnameParticant.getText(),this.SelectedProfil,this.birthdateParticant.getValue(),password.getText() );
         System.out.println("Participant "+part.getDate_naissance()+part.getMatricule_participant());
-        String query="INSERT INTO participant (matricule_participant,nom,prenom,date_naissance,id_profil) VALUES (";
-        String queryValues="'"+part.getMatricule_participant()+"','"+part.getNom()+"','"+part.getPrenom()+"','"+part.getDate_naissance()+"',"+part.getId_profile()+")";
+        String query="INSERT INTO participant (matricule_participant,nom,prenom,date_naissance,id_profil,password) VALUES (";
+        String queryValues="'"+part.getMatricule_participant()+"','"+part.getNom()+"','"+part.getPrenom()+"','"+part.getDate_naissance()+"',"+part.getId_profile()+",password='"+part.getPassword()+"')";
+        String query2="INSERT INTO `utilisateur`(`Login`, `Password`, `role`) VALUES ('"+part.getNom()+"','"+part.getPassword()+"',"+"2)";
         try{
             Statement stmt=connectDB.createStatement();
             stmt.executeUpdate(query+queryValues);
+            stmt.execute(query2);
             Refresh();
             refershTable();
         }catch(Exception e ){
@@ -199,6 +203,8 @@ public class ParticipantTableView implements Initializable {
             e.getCause();
         }
     }
+
+
     public void getProfileByID(String profil){
 
         String query= "SELECT code_profil FROM `profil` WHERE libelle='"+profil+"'";
